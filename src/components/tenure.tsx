@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 type Props = {
     startDate: string
@@ -6,27 +7,17 @@ type Props = {
 }
 
 const Tenure = ({ startDate, endDate }: Props) => {
-    const options = { month: 'short', year: 'numeric' };
-    const formatter = new Intl.DateTimeFormat('en-US', options);
-    let endMonth: string
-    let endYear: string;
+    const formatString: string = 'MMM YYYY';
 
-    const [
-        { value: startMonth },,
-        { value: startYear }
-    ] = formatter.formatToParts(new Date(startDate));
+    const startDateString: string = moment(startDate).format(formatString);
+    let endDateString: string = 'Current';
 
     if (endDate) {
-        const [
-            { value: _endMonth },,
-            { value: _endYear }
-        ] = formatter.formatToParts(new Date(endDate))
-        endMonth = _endMonth;
-        endYear = _endYear;
+        endDateString = moment(endDate).format(formatString);
     }
 
     return (
-        <span>{`${startMonth} ${startYear}`} - {endDate ? `${endMonth} ${endYear}` : 'Current'}</span>
+        <span>{startDateString} - {endDateString}</span>
     )
 }
 

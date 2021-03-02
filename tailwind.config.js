@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
     purge: ['./src/**/*.{js,jsx,ts,tsx}'],
     darkMode: false, // or 'media' or 'class'
@@ -19,6 +21,14 @@ module.exports = {
             lime: {
                 DEFAULT: 'hsl(90, 30%, 35%)',
                 light: 'hsl(90, 50%, 75%)',
+            },
+            ruby: {
+                DEFAULT: 'hsl(5, 60%, 25%)',
+                light: 'hsl(5, 90%, 70%)'
+            },
+            accentBlue: {
+                DEFAULT: 'hsl(200, 45%, 25%)',
+                light: 'hsl(175, 85%, 80%)'
             }
         },
         container: {
@@ -44,5 +54,16 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        plugin(function({ addUtilities }) {
+            const newUtilities = {
+                '.p-tag': {
+                    padding: '4px 8px',
+                    'font-size': '10px'
+                }
+            }
+
+            addUtilities(newUtilities)
+        })
+    ],
 }

@@ -22,8 +22,11 @@ const Links = () => {
 
     return (
         <ul className="flex">
-            {data.contentfulSiteContent.links.map(link => (
-                <ExternalLink link={link} className="font-thin capitalize mr-2.5 last:mr-0 border-b-2 border-dotted text-teal text-sm px-1">
+            {data.contentfulSiteContent.links.map((link, index) => (
+                <ExternalLink
+                    key={index}
+                    link={link}
+                    className="font-thin capitalize mr-2.5 last:mr-0 border-b-2 border-dotted text-teal text-sm px-1">
                     <li>
                         {link.includes('mailto:') ?
                             'Email' :

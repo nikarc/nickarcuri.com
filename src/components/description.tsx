@@ -1,17 +1,13 @@
 import React from 'react';
 
 type Props = {
-    data: {
-        description: string
-    }
+    data: string
 }
 
 const Description = ({ data }: Props) => {
-    if (!data?.description) return '';
-
     return (
         <ul>
-            {data.description.split('- ').map((d, index) => (
+            {data.split('- ').map((d, index) => (
                 <li key={index}>{d.trim()}</li>
             ))}
         </ul>

@@ -37,6 +37,7 @@ const Job = ({ data }: iJob) => {
         tags,
         description,
     } = data;
+    console.log('THE DATA: ', data)
 
     return (
         <div>
@@ -45,7 +46,7 @@ const Job = ({ data }: iJob) => {
                 <ExternalLink link={link}>{name}</ExternalLink>
                 <Tenure startDate={startDate} endDate={endDate} />
                 <Tags tags={tags} />
-                <Description data={description} />
+                {description?.description?.length ? <Description data={description.description} /> : ''}
             </div>
         </div>
     )
