@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 <Header siteTitle={data.contentfulSiteContent.siteName || `Title`} />
                 <main>{children}</main>
                 <footer className="mt-32 mb-8 text-center">
-                    <p>👨‍💻</p>
+                    <p><span role="img" aria-label="Man working at computer">👨‍💻</span></p>
                     <small>© {new Date().getFullYear()} {window.location.origin}</small>
                 </footer>
             </div>
