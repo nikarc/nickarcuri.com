@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
                 <main>{children}</main>
                 <footer className="mt-32 mb-8 text-center">
                     <p><span role="img" aria-label="Man working at computer">👨‍💻</span></p>
-                    <small>© {new Date().getFullYear()} {window.location.origin}</small>
+                    <small>© {new Date().getFullYear()} nickarcuri.com</small>
                 </footer>
             </div>
         </>
