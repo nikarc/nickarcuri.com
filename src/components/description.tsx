@@ -1,4 +1,5 @@
 import React from 'react';
+import BulletedList from './bulleted-list';
 
 type Props = {
     data: string
@@ -6,11 +7,7 @@ type Props = {
 
 const Description = ({ data }: Props) => {
     return (
-        <ul>
-            {data.split('- ').map((d, index) => (
-                <li key={index}>{d.trim()}</li>
-            ))}
-        </ul>
+        <BulletedList data={data.split('- ')} />
     )
 }
 

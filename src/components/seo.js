@@ -11,66 +11,58 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+    const { contentfulSiteMetaData: site } = useStaticQuery(
+        graphql`
+        query metaDataQuery {
+            contentfulSiteMetaData {
+                image {
+                    fixed {
+                        src
+                    }
+                }
+                description
+                title
+                titleTemplate
+                url
+            }
         }
-      }
-    `
-  )
+        `
+    )
+    console.log('META: ', site)
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+    const metaDescription = site?.description || description
+    const defaultTitle = site?.title || title
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
+    return (
+        <Helmet
+            htmlAttributes={{
+                lang,
+            }}
+            title={defaultTitle}
+            titleTemplate={`✌️ ${site?.titleTemplate}`}
+            meta={[
+                {
+                    name: `description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:title`,
+                    content: defaultTitle,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+            ].concat(meta)}>
+            <meta charSet="utf-8" />
+            <title>{defaultTitle}</title>
+            <link rel="canonical" href="https://nickarcuri.com" />
+        </Helmet>
+    )
 }
 
 SEO.defaultProps = {

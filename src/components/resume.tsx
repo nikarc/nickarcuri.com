@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Job, { tJob } from './job';
 import PageSection from './pageSection';
+import HorizontalRule from './horizontal-rule';
 
 type ContentfulNode = {
     node: tJob
@@ -40,12 +41,14 @@ const Resume = () => {
 
     return (
         <PageSection>
-            <h2>Resume</h2>
+            <h2 className="mb-4 font-light tracking-widest uppercase text-teal-light">Resume</h2>
             {currentJob?.node ? <Job data={currentJob.node} /> : ''}
+            <HorizontalRule />
             {otherJobs.map(({ node: job }, index) => (
-                <Job
-                    data={job}
-                    key={index} />
+                <React.Fragment key={index}>
+                    <Job data={job} />
+                    {index !== otherJobs.length - 1 && <HorizontalRule />}
+                </React.Fragment>
             ))}
         </PageSection>
     )

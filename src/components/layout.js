@@ -25,14 +25,9 @@ const Layout = ({ children }) => {
             <div className="container mx-auto font-sans">
                 <Header siteTitle={data.contentfulSiteContent.siteName || `Title`} />
                 <main>{children}</main>
-                <footer
-                    style={{
-                        marginTop: `2rem`,
-                    }}
-                >
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.com">Gatsby</a>
+                <footer className="mt-32 mb-8 text-center">
+                    <p>👨‍💻</p>
+                    <small>© {new Date().getFullYear()} {window.location.origin}</small>
                 </footer>
             </div>
         </>

@@ -37,10 +37,9 @@ const Job = ({ data }: iJob) => {
         tags,
         description,
     } = data;
-    console.log('THE DATA: ', data)
 
     return (
-        <div>
+        <div className="my-12 first:mt-0">
             <h3>{title}</h3>
             <div>
                 <ExternalLink link={link}>{name}</ExternalLink>

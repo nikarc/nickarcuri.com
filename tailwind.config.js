@@ -6,7 +6,10 @@ module.exports = {
     theme: {
         colors: {
             yellow: {
+                //dark: 'hsl(34, 94%, 40%)',
+                dark: 'hsl(8, 76%, 52%)',
                 DEFAULT: 'hsl(41, 100%, 67%)',
+                light: 'hsl(34, 94%, 84%)',
             },
             blue: {
                 dark: 'hsl(231, 35%, 12%)',
@@ -16,20 +19,28 @@ module.exports = {
                 DEFAULT: 'hsl(175, 25%, 90%)',
             },
             teal: {
-                DEFAULT: 'hsl(175, 85%, 80%)',
+                DEFAULT: 'hsl(200, 45%, 25%)',
+                light: 'hsl(175, 85%, 80%)',
             },
             lime: {
                 DEFAULT: 'hsl(90, 30%, 35%)',
                 light: 'hsl(90, 50%, 75%)',
             },
             ruby: {
-                DEFAULT: 'hsl(5, 60%, 25%)',
-                light: 'hsl(5, 90%, 70%)'
+                DEFAULT: 'hsl(5, 75%, 45%)',
+                light: 'hsl(5, 90%, 85%)'
             },
-            accentBlue: {
-                DEFAULT: 'hsl(200, 45%, 25%)',
-                light: 'hsl(175, 85%, 80%)'
+            pink: {
+                DEFAULT: 'hsl(330, 66%, 45%)',
+                light: 'hsl(330, 66%, 85%)',
+            },
+            purple: {
+                DEFAULT: 'hsl(240, 100%, 30%)',
+                light: 'hsl(240, 50%, 75%)'
             }
+        },
+        flex: {
+            '2': '0 0 0.5rem'
         },
         container: {
             screens: {
