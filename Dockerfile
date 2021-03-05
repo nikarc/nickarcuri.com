@@ -8,6 +8,7 @@ COPY . .
 
 CMD ["npm", "run", "build"]
 
-FROM nginx EXPOSE 80
+FROM nginx
+EXPOSE 80
 COPY --from=builder /app/public /var/www/nickarcuri.com/html
 
