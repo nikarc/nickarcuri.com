@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from 'react';
 
-const buildClass = color => `bg-${color}-light text-${color} border-${color}`;
-const greenLang = buildClass('lime');
-const redLang = buildClass('ruby');
-const blueLang = buildClass('teal');
-const pinkLang = buildClass('pink');
-const purpleLang = buildClass('purple');
+const greenLang = 'bg-lime-light text-lime border-lime';
+const redLang = 'bg-ruby-light text-ruby border-ruby';
+const blueLang = 'bg-teal-light text-teal border-teal';
+const pinkLang = 'bg-pink-light text-pink border-pink';
+const purpleLang = 'bg-purple-light text-purple border-purple';
 const yellowLang = 'bg-yellow-light text-yellow-dark border-yellow-dark';
 
 export type TagLang = {

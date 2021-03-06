@@ -29,7 +29,7 @@ const Headshot = () => {
     return (
         <img
             className="mr-10 border-4 rounded-full w-28 border-yellow"
-            src={data.contentfulSiteContent.headshot.sizes.src} />
+            src={`https:${data.contentfulSiteContent.headshot.sizes.src}`} />
     )
 }
 
