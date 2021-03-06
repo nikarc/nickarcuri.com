@@ -2,8 +2,8 @@ FROM node:15.8.0
 WORKDIR /app
 
 COPY package.json .
-RUN npm update
-RUN npm install
+RUN yarn update
+RUN yarn install
 
 COPY . .
 

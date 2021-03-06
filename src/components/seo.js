@@ -28,7 +28,6 @@ function SEO({ description, lang, meta, title }) {
         }
         `
     )
-    console.log('META: ', site)
 
     const metaDescription = site?.description || description
     const defaultTitle = site?.title || title
@@ -39,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
                 lang,
             }}
             title={defaultTitle}
-            titleTemplate={`✌️ ${site?.titleTemplate}`}
+            titleTemplate={site?.titleTemplate}
             meta={[
                 {
                     name: `description`,

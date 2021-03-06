@@ -7,7 +7,7 @@ import Links from './links'
 const Header = ({ siteTitle }) => (
     <header className="flex items-center mt-10 mb-20">
         <Headshot />
-        <h1 className="mr-auto text-2xl font-semibold tracking-widest">
+        <h1 className="mr-auto text-2xl font-semibold tracking-widest uppercase">
             <Link to="/">
                 {siteTitle}
             </Link>
