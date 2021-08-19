@@ -1,20 +1,18 @@
-import React from 'react';
-import Tag from './tag';
+import React from "react"
+import Tag from "./tag"
 
 type Props = {
-    tags: string[]
+  tags: string[]
 }
 
 const Tags = ({ tags }: Props) => (
-    <div className="my-4">
-        {tags.map((tag, index) => (
-            <Tag
-                tagType={tag}
-                key={index}>
-                {tag}
-            </Tag>
-        ))}
-    </div>
-);
+  <div className="my-4 flex flex-wrap">
+    {tags.map((tag, index) => (
+      <Tag tagType={tag} key={index}>
+        {tag}
+      </Tag>
+    ))}
+  </div>
+)
 
-export default Tags;
+export default Tags
