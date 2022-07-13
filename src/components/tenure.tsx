@@ -17,7 +17,7 @@ const Tenure = ({ startDate, endDate }: Props) => {
     }
 
     return (
-        <span>{startDateString} - {endDateString}</span>
+        <span className="text-center sm:text-left">{startDateString} - {endDateString}</span>
     )
 }
 

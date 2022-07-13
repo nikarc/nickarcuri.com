@@ -6,7 +6,7 @@ type Props = {
 }
 
 const Tags = ({ tags }: Props) => (
-  <div className="my-4 flex flex-wrap">
+  <div className="my-4 flex flex-wrap justify-center sm:justify-start">
     {tags.map((tag, index) => (
       <Tag tagType={tag} key={index}>
         {tag}
